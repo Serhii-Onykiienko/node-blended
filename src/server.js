@@ -10,6 +10,7 @@ import productsRouters from './routes/productsRoutes.js';
 import authRouters from './routes/authRoutes.js';
 import { errors } from 'celebrate';
 import cookieParser from 'cookie-parser';
+import userRouters from './routes/userRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3030;
@@ -21,6 +22,7 @@ app.use(cookieParser());
 
 app.use(authRouters);
 app.use(productsRouters);
+app.use(userRouters);
 
 app.use(notFoundHandler);
 app.use(errors());
